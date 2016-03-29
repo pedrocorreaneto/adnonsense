@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Creatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bid</th>
+      <th>Adtext</th>
+      <th>Ad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @creatives.each do |creative| %>
+      <tr>
+        <td><%= creative.bid %></td>
+        <td><%= creative.adtext %></td>
+        <td><%= creative.ad %></td>
+        <td><%= link_to 'Show', ad_creative_path(creative.ad, creative) %></td>
+        <td><%= link_to 'Edit', edit_ad_creative_path(creative.ad, creative) %></td>
+        <td><%= link_to 'Destroy', ad_creative_path(creative.ad, creative), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Creative', new_ad_creative_path %>
