@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20160329145639) do
 
   create_table "targetings", force: :cascade do |t|
     t.string   "places"
-    t.integer  "gender"
+    t.integer  "gender",     default: 0
     t.integer  "ad_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "targetings", ["ad_id"], name: "index_targetings_on_ad_id"

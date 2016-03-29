@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, Targeting.genders.keys  %>
   </div>
   <div class="field">
     <%= f.label :ad_id %><br>

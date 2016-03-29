@@ -43,7 +43,7 @@ class CreativesController < ApplicationController
   def update
     respond_to do |format|
       if @creative.update(creative_params)
-        format.html { redirect_to @creative, notice: 'Creative was successfully updated.' }
+        format.html { redirect_to ad_creative_path(@creative.ad, @creative), notice: 'Creative was successfully updated.' }
         format.json { render :show, status: :ok, location: @creative }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class CreativesController < ApplicationController
   def destroy
     @creative.destroy
     respond_to do |format|
-      format.html { redirect_to creatives_url, notice: 'Creative was successfully destroyed.' }
+      format.html { redirect_to ad_creatives_url, notice: 'Creative was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
