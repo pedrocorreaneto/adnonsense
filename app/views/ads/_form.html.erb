@@ -10,10 +10,24 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :budget %><br>
     <%= f.text_field :budget %>
+  </div>
+
+  <h3>Creatives</h3>
+   <div>
+    <%= f.fields_for :creatives do |item| %>
+      <%= render "creative_fields", f: item %>
+    <% end %>
+    <%= link_to_add_association 'add creative', f, :creatives %>
+  </div>
+  <h3>Targeting</h3>
+   <div>
+    <%= f.fields_for :targetings do |item| %>
+      <%= render "targeting_fields", f: item %>
+    <% end %>
+    <%= link_to_add_association 'add targeting', f, :targetings %>
   </div>
   <div class="actions">
     <%= f.submit %>

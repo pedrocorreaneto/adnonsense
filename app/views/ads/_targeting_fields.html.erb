@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :places %><br>
+    <%= f.text_field :places %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, Targeting.genders.keys  %>
+  </div>
+ <%= link_to_remove_association "remove targeting", f %>
+</div>
