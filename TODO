@@ -1,3 +1,5 @@
-Client-Side validação
 2. Deve conter ao menos um criativo
 3. Deve conter ao menos um targeting
+BUGS:
+Client-Side validação dos nested
+validacao do preço bid maior que o budget

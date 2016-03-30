@@ -1,6 +1,6 @@
 class Creative < ActiveRecord::Base
   belongs_to :ad
-  validates :bid, numericality: true
+  validates :bid, numericality: {greater_than: 0}
   validates :adtext, presence: true
   validate :bid_less_than_budget
 

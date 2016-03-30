@@ -48,4 +48,5 @@ end
 gem 'will_paginate'
 gem 'cocoon'
 gem 'simple_form'
-
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
