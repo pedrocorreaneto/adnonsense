@@ -1,4 +1,6 @@
 class Creative < ActiveRecord::Base
+  attr_accessor :budget
+
   belongs_to :ad
   validates :bid, numericality: {greater_than: 0}
   validates :adtext, presence: true
@@ -6,7 +8,7 @@ class Creative < ActiveRecord::Base
 
   def bid_less_than_budget
     return if self.bid == nil
-    if self.bid > self.ad.budget
+    if bid > budget.to_f
       errors.add(:bid, "Bid is greater than budget")
     end
   end
