@@ -1,4 +1,4 @@
-<%= form_for(@ad) do |f| %>
+<%= simple_form_for(@ad) do |f| %>
   <% if @ad.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
@@ -11,25 +11,24 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :budget %><br>
-    <%= f.text_field :budget %>
+    <%= f.input :budget %><br>
   </div>
 
   <h3>Creatives</h3>
    <div>
-    <%= f.fields_for :creatives do |item| %>
+    <%= f.simple_fields_for :creatives do |item| %>
       <%= render "creative_fields", f: item %>
     <% end %>
     <%= link_to_add_association 'add creative', f, :creatives %>
   </div>
   <h3>Targeting</h3>
    <div>
-    <%= f.fields_for :targetings do |item| %>
+    <%= f.simple_fields_for :targetings do |item| %>
       <%= render "targeting_fields", f: item %>
     <% end %>
     <%= link_to_add_association 'add targeting', f, :targetings %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>

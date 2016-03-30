@@ -47,3 +47,5 @@ end
 
 gem 'will_paginate'
 gem 'cocoon'
+gem 'simple_form'
+
