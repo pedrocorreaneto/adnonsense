@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adnonsense</title>
+  <title>Ad-nonsense</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<%= yield %>
+<div class='container'>
+ <% flash.each do |key, value| %>
+     <% if value.class == Array %>
+       <% value.each do |message| %>
+         <p class="alert alert-<%= key %>"><%= message %></p>
+       <% end %>
+     <% else %>
+       <p class="alert alert-<%= key %>"><%= value %></p>
+     <% end %>
+ <% end %>
+ <% flash.clear %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

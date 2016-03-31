@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
   <strong>Budget:</strong>
   <%= @ad.budget %>
 </p>
 
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+<%= link_to 'Edit', edit_ad_path(@ad), :class=>"btn btn-default" %> 
+<%= link_to 'Back', ads_path, :class=>"btn btn-default" %>

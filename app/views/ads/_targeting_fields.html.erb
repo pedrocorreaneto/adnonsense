@@ -1,11 +1,5 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :places %><br>
-    <%= f.text_field :places %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, Targeting.genders.keys  %>
-  </div>
- <%= link_to_remove_association "remove targeting", f %>
+    <%= f.input :places %>
+    <%= f.input :gender, collection: Targeting.genders.keys, selected: :undefined  %>
+ <%= link_to_remove_association "remove targeting", f, :class=>"btn btn-default" %>
 </div>
