@@ -1,6 +1,10 @@
-  <strong>Budget:</strong>
+<h1>Advertising</h1>
+<h3>
+<strong>Budget:</strong>
   <%= @ad.budget %>
 </p>
-
+<%= render partial: "creative", collection: @ad.creatives %>
+<%= render partial: "targeting", collection: @ad.targetings %>
+</h3>
 <%= link_to 'Edit', edit_ad_path(@ad), :class=>"btn btn-default" %> 
 <%= link_to 'Back', ads_path, :class=>"btn btn-default" %>

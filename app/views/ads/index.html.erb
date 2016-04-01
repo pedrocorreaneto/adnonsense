@@ -2,7 +2,7 @@
 <div class="text-right">
 <%= link_to 'New Ad', new_ad_path, :class=>"btn btn-default" %>
 </div>
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Budget</th>
@@ -23,6 +23,6 @@
 </table>
 
 <br>
-
-<%= will_paginate @posts %>
-
+<div class="pagination">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
