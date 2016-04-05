@@ -3,6 +3,8 @@ require 'test_helper'
 class AdsControllerTest < ActionController::TestCase
   setup do
     @ad = ads(:one)
+    @creative = creatives(:one)
+    @targeting = targetings(:one)
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test "should create ad" do
     assert_difference('Ad.count') do
-      post :create, ad: { budget: @ad.budget }
+      post :create, ad: { budget: @ad.budget, creatives_attributes: {'0' => {bid: @creative.bid, adtext: @creative.adtext}}, targetings_attributes: {'0'=> {places: @targeting.places, gender: @targeting.gender}}}
     end
 
     assert_redirected_to ad_path(assigns(:ad))
@@ -35,7 +37,10 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should update ad" do
-    patch :update, id: @ad, ad: { budget: @ad.budget }
+    ad=ads(:two)
+    creative = creatives(:two)
+    targeting = targetings(:two)
+    patch :update, id: @ad, ad: { budget: ad.budget, creatives_attributes: {'0' => {bid: creative.bid, adtext: creative.adtext}}, targetings_attributes: {'0'=> {places: targeting.places, gender: targeting.gender}}}
     assert_redirected_to ad_path(assigns(:ad))
   end
 

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  bid: 9.99
-  adtext: MyText
+  bid: 8.99
+  adtext: "Some ad text"
   ad_id: 
 
 two:
-  bid: 9.99
-  adtext: MyText
+  bid: 7.99
+  adtext: "Another text"
   ad_id: 

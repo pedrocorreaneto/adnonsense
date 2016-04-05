@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  places: MyString
-  gender: 
+  places: "nowhere"
+  gender: :male
   ad_id: 
 
 two:
-  places: MyString
+  places: "another place"
   gender: 
   ad_id: 
