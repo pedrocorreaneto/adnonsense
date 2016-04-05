@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :ads do 
-    resources :targetings
-    resources :creatives
-  end
+  resources :ads  
+  root 'ads#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
