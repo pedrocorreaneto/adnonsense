@@ -2,7 +2,7 @@ class Creative < ActiveRecord::Base
   attr_accessor :budget
 
   belongs_to :ad
-  validates :bid, numericality: {greater_than: 0}
+  validates :bid, presence: true, numericality: {greater_than: 0}
   validates :adtext, presence: true
   validate :bid_less_than_budget
 

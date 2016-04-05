@@ -1,10 +1,30 @@
-<h1>Advertising</h1>
-<h3>
-<strong>Budget:</strong>
-  <%= @ad.budget %>
-</p>
-<%= render partial: "creative", collection: @ad.creatives %>
-<%= render partial: "targeting", collection: @ad.targetings %>
-</h3>
-<%= link_to 'Edit', edit_ad_path(@ad), :class=>"btn btn-default" %> 
+<h1>Ad</h1>
+
+
+<ul class="list-group" >
+  <li class="list-group-item" >
+    <div class="col-sm-2"><strong>Title: </strong></div>
+    There is no Title
+  </li>
+  <li class="list-group-item" >
+    <div class="col-sm-2"><strong>Budget: </strong></div>
+    <%= @ad.budget %>
+  </li>
+</ul>
+
+<div class="panel panel-info">
+  <div class="panel-heading">Creatives</div>
+  <div class="panel-body">
+    <%= render partial: "creative", collection: @ad.creatives %>
+  </div>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">Targetings</div>
+  <div class="panel-body">
+    <%= render partial: "targeting", collection: @ad.targetings %>
+  </div>
+</div>
+
 <%= link_to 'Back', ads_path, :class=>"btn btn-default" %>
+<%= link_to 'Edit', edit_ad_path(@ad), :class=>"btn btn-default" %> 
