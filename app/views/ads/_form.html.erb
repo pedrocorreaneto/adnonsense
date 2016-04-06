@@ -1,5 +1,5 @@
 <%= simple_form_for(@ad, validate: true,  html: {class: 'form-horizontal' }) do |f| %>
-  <%= f.input :budget %>
+  <%= f.input :budget , as: :string%>
   <h3>Creatives</h3>
    <div>
     <%= f.simple_fields_for :creatives, validate: true do |item| %>
