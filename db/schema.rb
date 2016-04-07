@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329145639) do
+ActiveRecord::Schema.define(version: 20160407043913) do
 
   create_table "ads", force: :cascade do |t|
     t.decimal  "budget"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "title"
   end
 
   create_table "creatives", force: :cascade do |t|

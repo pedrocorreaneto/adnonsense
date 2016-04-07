@@ -77,7 +77,7 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-     par = params.require(:ad).permit(:budget, creatives_attributes: [:id, :bid, :adtext, :_destroy], targetings_attributes: [:id,:_destroy, :places, :gender])
+     par = params.require(:ad).permit(:title, :budget, creatives_attributes: [:id, :bid, :adtext, :_destroy], targetings_attributes: [:id,:_destroy, :places, :gender])
      par[:creatives_attributes].each_pair{|key, creative| creative[:budget]=par[:budget]} if par[:creatives_attributes] != nil
      return par
     end

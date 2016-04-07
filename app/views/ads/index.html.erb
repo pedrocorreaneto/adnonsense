@@ -5,7 +5,7 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>Budget</th>
+      <th>Ads</th>
       <th class='col-sm-1 col-xs-1' colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @ads.each do |ad| %>
       <tr>
-        <td><%= ad.budget %></td>
+        <td><%= ad.title || "# #{ad.id}" %></td>
         <td><%= link_to ' ', ad, {:class=> "glyphicon glyphicon-search"} %></td>
         <td><%= link_to ' ', edit_ad_path(ad),{:class=>"glyphicon glyphicon-pencil"} %></td>
         <td><%= link_to ' ', ad, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "glyphicon glyphicon-trash" %></td>
