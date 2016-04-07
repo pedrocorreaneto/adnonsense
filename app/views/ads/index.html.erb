@@ -13,7 +13,9 @@
   <tbody>
     <% @ads.each do |ad| %>
       <tr>
-        <td><%= ad.title || "# #{ad.id}" %></td>
+        <td><%= ad.title%>
+         <%="# #{ad.id}" if ad.title ==nil or ad.title.empty? %>
+        </td>
         <td><%= link_to ' ', ad, {:class=> "glyphicon glyphicon-search"} %></td>
         <td><%= link_to ' ', edit_ad_path(ad),{:class=>"glyphicon glyphicon-pencil"} %></td>
         <td><%= link_to ' ', ad, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "glyphicon glyphicon-trash" %></td>
