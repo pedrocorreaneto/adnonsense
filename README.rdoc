@@ -3,22 +3,14 @@ Programa resposta a questão SER-MiniAds-280316-2147-2
 
 A versão do ruby utilizada foi a 2.2.4 fornecida pelo RVM.
 
-As gems necessárias para a instalação estão em “Gemfile” e 
-podem ser instaladas seguindo o padrão:
-$ bundle install
+As gems necessárias para a instalação estão em “Gemfile” e podem ser instaladas seguindo o padrão:
+ bundle install
 
-O banco de dados utilizado para desenvolvimento foi o 
-Sqlite e para produção foi sugerido o Postgresql. Não foram 
-elaboradas as configurações do banco para produção.
+O banco de dados utilizado para desenvolvimento foi o Sqlite e para produção foi sugerido o Postgresql. Não foram elaboradas as configurações do banco para produção.
 
-A criação do banco de dados e a migração seguem os padrões 
-rails
-$ rake db:create
-$ rake db:migrate
+A criação do banco de dados e a migração seguem os padrões rails
+ rake db:create
+ rake db:migrate
 
-Existem testes unitários, focado em testes nos models, pois
- as validações são o ponto forte da questão. Para executar 
-os testes:
-$ rake test
-
-<tt>rake doc:app</tt>.
+Existem testes unitários, focado em testes nos models, pois as validações são o ponto forte da questão. Para executar os testes:
+ rake test
