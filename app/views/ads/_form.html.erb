@@ -1,15 +1,15 @@
 <%= simple_form_for(@ad, validate: true,  html: {class: 'form-horizontal' }) do |f| %>
-  <%= f.input :budget , as: :string%>
+  <%= f.input :budget %>
   <h3>Creatives</h3>
    <div>
-    <%= f.simple_fields_for :creatives, validate: true do |item| %>
+    <%= f.simple_fields_for :creatives do |item| %>
       <%= render "creative_fields", f: item %>
     <% end %>
     <%= link_to_add_association 'add creative', f, :creatives, :class=>"btn btn-default" %>
   </div>
   <h3>Targeting</h3>
    <div>
-    <%= f.simple_fields_for :targetings, validate: true do |item| %>
+    <%= f.simple_fields_for :targetings do |item| %>
       <%= render "targeting_fields", f: item %>
     <% end %>
     <%= link_to_add_association 'add targeting', f, :targetings, :class=>"btn btn-default" %>
